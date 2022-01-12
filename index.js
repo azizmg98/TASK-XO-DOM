@@ -12,9 +12,12 @@ function winningAlert(winner) {
 
 // SAMPLE CODE: This code fills the 1st and 9th button with X and O initially
 // ❗️ Delete this code once you are done testing
-fillButton(1, "X");
-fillButton(9, "O");
+// fillButton(1, "X");
+// fillButton(9, "O");
 
+/*
+for each button click screen prints O and X alternate
+*/
 /**
  *
  * THE MAIN FUNCTION
@@ -22,9 +25,20 @@ fillButton(9, "O");
  * Add your code here, since this is going to be your main function
  * That interacts with the UI
  */
+let player = 1
+
 function clickButton(index) {
   console.log(`Button number ${index} is clicked`);
   // Your main code here.
+   if (document.getElementById(index).innerHTML  === "X" || document.getElementById(index).innerHTML  === "O" ) {
+    alert("th")
+  } else {
+  player++;
+  if (player % 2 === 1) {
+    fillButton(index, "X");
+  } else {
+    fillButton(index, "O");
+  }} 
 }
 
 /**
@@ -36,6 +50,13 @@ function clickButton(index) {
 // In this function you should check if the player is X or O
 function checkPlayer() {
   // ....
+  // if (fillButton(index, "X")){
+  //  return player = false; player2 = true 
+  // } else if (fillButton(index, "O")){
+  //   return player2 = false; player = true
+  // }
+  
+  
 }
 
 /**
@@ -43,6 +64,15 @@ function checkPlayer() {
  * checkWinner should be a function that checks
  * who is winning and returns the winner
  */
-// function checkWinner
+let winCondition = [
+  [1,2,3], [4,5,6], [7,8,9],
+  [1,4,7], [2,5,8], [3,6,9],
+  [1,5,9,], [3,5,7],
+]
+function checkWinner() {
+  let winPlayer = [
+    
+  ]
+}
 
 // function restartGame
